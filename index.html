@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>StudyIn</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--
+    DEFAULT APPLICATION TEMPLATE: This gets rendered in a browser as soon as "Ember.Application.create()" happens.
+  -->
+
+  <script type="text/x-handlebars">
+    <main>
+		<div id="left-content">
+			{{outlet "left-menu"}}
+		</div>
+		<div id="mid-content">
+			{{outlet}}	
+		</div>
+		<div id="right-content">
+			{{outlet "right-menu"}}
+		</div>
+	</main>
+  </script>
+
+  <!--
+    The app's entire page structure is above this comment line.
+    All of our single-page templates are below this comment line.
+  -->
+
+  <script type="text/x-handlebars" data-template-name="left-menu">
+	<div id="user">
+		<img id="user-image" src="images/lucas_david_usr.png" />
+		<span id="user-title">{{#link-to "profile"}}Lucas David{{/link-to}}</span>
+		<ul>
+			{{#link-to "home" tagName="li"}}Home{{/link-to}}
+			{{#link-to "groups" tagName="li"}}Groups{{/link-to}}
+			{{#link-to "messages" tagName="li"}}Messages{{/link-to}}
+			{{#link-to "notifications" tagName="li"}}Notifications{{/link-to}}
+		</ul>
+	</div>
+	
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="right-menu">
+	<div id="check-in">
+		<div id="check-in-image-container">
+			<img id="update-status-groups-button" src="images/check_in_2.png"/>
+		</div>
+	<span id="check-in-title">Check In</span>
+	</div>
+  </script>
+
+
+  <!--
+    ====================================================
+    "HOME" PAGE TEMPLATE: displays the Home page content 
+    ====================================================
+  -->
+  <script type="text/x-handlebars" data-template-name="index">
+		<div id="site-title">
+			<img id="site-logo" src="images/check_in_transparent_blue.png"/>
+		StudyIn
+		</div>
+		<div id="tagline">A social network for the times when you need to get stuff done.</div>
+
+		<p>With StudyIn, the status updates are purely academic - there are no photos to be distracted by. </p>
+
+		<p>But what you will see is just how many of your friends are studying along with you, which can motivate you to get your work done.</p>
+
+		<p>You can post study updates, check in to study locations, and message your friends about meeting up with one another to study together. And for organizations such as greek houses and clubs, you can log your members study hours and compete with other organizations on who can get the most.</p>
+
+		{{#link-to "home" id="login"}}Login with Facebook{{/link-to}}
+  </script>
+
+  <!--
+	====================================================
+	"STATUS CHECK IN" PAGE TEMPLATE: displays the Status Check Ins for a User who has logged in
+	====================================================
+  -->  
+  <script type="text/x-handlebars" data-template-name="components/single-status-check-in">
+	<img class="statusUpdateUserImg" {{bind-attr src=imageURL}} />
+	<div class="statusUpdateContent"> 
+		<div> 
+			<span class="statusUpdateAuthor">{{userName}}</span>
+			<span class="statusUpdateInformation">{{statusText}}</span>
+		</div>
+		<span class="statusUpdateLocation">- posted at {{locationText}} </span>
+	</div>
+	<img src="images/message.png" class="statusUpdateMessageButton" />
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="home">
+	<div id="feed">
+		<div id="status-feed-toolbar">
+			<!--
+			<div id="status-popup">
+			<textarea id="status-info-textarea" placeholder="What's your status?"></textarea>
+			<textarea id="status-class-textarea" placeholder="Class"></textarea>
+			<textarea id="status-professor-textarea" placeholder="Professor"></textarea>
+			<textarea id="status-location-textarea" placeholder="Study Spot"></textarea>
+			
+			<div id="status-silent">
+				<label><input type="checkbox" />Silent Check In</label>
+			</div>
+			<div id="status-post-btn">Start StudyIn</div>
+			</div>
+			-->
+		</div>
+		
+		{{#if hasStatusCheckIns}}
+			<ul>
+				{{#each itemController="status-check-in"}}
+					{{single-status-check-in userName=userName statusText=statusText locationText=locationText imageURL=imageURL}}
+				{{/each}}
+			</ul>
+		{{else}}
+			<div id="no-status-check-ins">
+				Nothing here. 
+				<br>
+				<br>
+				Join a group to see whats happening.
+			</div>
+		{{/if}}
+	</div>
+  </script>
+
+  <!--
+	====================================================
+	"ADD GROUP" PAGE TEMPLATE: where the User will Add a Group by either Searching for one or Creating one
+	====================================================
+  -->  
+
+  <script type="text/x-handlebars" data-template-name="add-group">
+	<div id="add-a-group-header">
+		Add a Group
+	</div>
+	<div id="messages-toolbar">
+		<ul>
+			<li class="selected"> Search </li>
+			<li> Create </li>
+		</ul>
+	</div>
+	<div id="search-groups">
+		<input type="textfield" id="search-textarea"></textarea>
+		<div id="search-button">Go</div>
+	</div>
+
+  </script>
+
+  <!--
+    ====================================================
+    "MESSAGES" PAGE TEMPLATE: displays the User's Messages page content 
+    ====================================================
+  -->
+  <script type="text/x-handlebars" data-template-name="messages">
+
+	<ul id="messages-list">
+		<li class="messageItem"> 
+			<img class="messageUserImg" src="images/deryck_whibley_usr.png" />
+			<div class="messageContent"> 
+				<div> 
+					<span class="messageAuthor">Deryck Whibley</span>
+					<span class="messageInformation">Hey want to meet up and work on the calc hw? </span>
+
+				</div>
+			</div>
+
+		</li>
+		<li class="messageItem"> 
+			<img class="messageUserImg" src="images/beach_usr.png" />
+			<div class="messageContent"> 
+				<div> 
+					<span class="messageAuthor">Amy Kirk</span>
+					<span class="messageInformation">Did you finish the english paper? </span>
+
+				</div>
+			</div>
+
+		</li>
+	</ul>
+  </script>
+
+  <!--
+    ====================================================
+    "NOTIFICATIONS" PAGE TEMPLATE: displays the User's Notifications page content, which would include invites to groups, etc
+    ====================================================
+  -->
+  <script type="text/x-handlebars" data-template-name="notifications">
+	<ul id="messages-list">
+		<li class="messageItem"> 
+			<div class="messageContent"> 
+				<div> 
+					<span class="messageAuthor">Sigma Nu</span>
+					<span class="messageInformation">You've been invited to join Sigma Nu!</span>
+				</div>
+			</div>
+
+
+		</li>
+		<li class="messageItem"> 
+			<div class="messageContent"> 
+				<div> 
+					<span class="messageAuthor">StudyIn</span>
+					<span class="messageInformation">You were automatically checked in at 10:05 PM.</span>
+				</div>
+			</div>
+		</li>
+	</ul>
+  </script>
+
+
+  <!--
+    ====================================================
+    "PROFILE" PAGE TEMPLATE: displays the User's Profile page
+    ====================================================
+  -->
+  <script type="text/x-handlebars" data-template-name="profile">
+	<div id="profile-header">
+
+		<img id="profile-user-image" src="images/lucas_david_usr.png" />
+
+		<div id="profile-title">Lucas David</div>
+	</div>
+
+	<div id="totals">
+	<img id="total-hours-image" src="images/36totalhours.png" />
+	<img id="day-streak-image" src="images/3daystreak.png" />
+	<img id="total-checkins-image" src="images/15checkins.png" />
+	</div>
+	<div id="hours-header">
+		Last Week
+	</div>
+
+	<img class="chart" src="images/weekly_chart.png" />
+	
+
+	<ul id="profile-list">
+		<li class="statusUpdateItem"> 
+			<img class="statusUpdateUserImg" src="images/lucas_david_usr.png" />
+			<div class="statusUpdateContent"> 
+				<div> 
+					<span class="statusUpdateAuthor">Lucas David</span>
+					<span class="statusUpdateInformation">is studying for a capstone quiz </span>
+				</div>
+				<span class="statusUpdateLocation">- posted at Robert E. Kennedy Library </span>
+			</div>
+
+		</li>
+		<li class="statusUpdateItem"> 
+			<img class="statusUpdateUserImg" src="images/lucas_david_usr.png" />
+			<div class="statusUpdateContent"> 
+				<div> 
+					<span class="statusUpdateAuthor">Lucas David</span>
+					<span class="statusUpdateInformation">is studying for a capstone quiz </span>
+				</div>
+				<span class="statusUpdateLocation">- posted at Robert E. Kennedy Library </span>
+			</div>
+
+		</li>
+	</ul>
+	</div>
+  </script>
+
+  <!--
+    ====================================================
+    "PROFILE" PAGE TEMPLATE: displays the User's Profile page
+    ====================================================
+  -->
+  <script type="text/x-handlebars" data-template-name="groups">
+	<ul id="groups-list">
+		{{#each itemController="group"}} 
+			{{#link-to "group" this tagName="li" class="groupItem"}}
+				<div class="groupTitle">{{name}}</div>
+				<div class="groupStatus">{{totalHours}} total hours this week</div>
+			{{/link-to}}
+		{{/each}}
+		<li id="add-new-group-list-item">
+			{{#link-to "add-group"}}Add New Group{{/link-to}}
+		</li>
+	</ul>
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="group">
+  			<div id="group-header">
+				{{name}}
+			</div>
+			<div id="group-toolbar">
+				<ul>
+					<li> Statistics </li>
+					<li> Competitions </li>
+					<li> Settings </li>
+				</ul>
+			</div>
+			<div id="feed">
+
+			<ul>
+				<li class="statusUpdateItem"> 
+					<img class="statusUpdateUserImg" src="images/lucas_david_usr.png" />
+					<div class="statusUpdateContent"> 
+						<div> 
+							<span class="statusUpdateAuthor">Lucas David</span>
+							<span class="statusUpdateInformation">is studying for a capstone quiz </span>
+						</div>
+						<span class="statusUpdateLocation">- posted at Robert E. Kennedy Library </span>
+					</div>
+					<img src="images/message.png" class="statusUpdateMessageButton" />
+
+				</li>
+				<li class="statusUpdateItem"> 
+					<img class="statusUpdateUserImg" src="images/deryck_whibley_usr.png" />
+					<div class="statusUpdateContent"> 
+						<div> 
+							<span class="statusUpdateAuthor">Deryck Whibley</span>
+							<span class="statusUpdateInformation">Late night at the studio. </span>
+						</div>
+						<span class="statusUpdateLocation">- posted at Island Records Studio </span>
+					</div>
+					<img src="images/message.png" class="statusUpdateMessageButton" />
+
+				</li>
+				<li class="statusUpdateItem"> 
+					<img class="statusUpdateUserImg" src="images/lucas_david_usr.png" />
+					<div class="statusUpdateContent"> 
+						<div> 
+							<span class="statusUpdateAuthor">Lucas David</span>
+							<span class="statusUpdateInformation">is studying for a capstone quiz </span>
+						</div>
+						<span class="statusUpdateLocation">- posted at Robert E. Kennedy Library </span>
+					</div>
+					<img src="images/message.png" class="statusUpdateMessageButton" />
+
+				</li>
+				<li class="statusUpdateItem"> 
+					<img class="statusUpdateUserImg" src="images/deryck_whibley_usr.png" />
+					<div class="statusUpdateContent"> 
+						<div> 
+							<span class="statusUpdateAuthor">Deryck Whibley</span>
+							<span class="statusUpdateInformation">Late night at the studio. </span>
+						</div>
+						<span class="statusUpdateLocation">- posted at Island Records Studio </span>
+					</div>
+					<img src="images/message.png" class="statusUpdateMessageButton" />
+
+				</li>
+				<li class="statusUpdateItem"> 
+					<img class="statusUpdateUserImg" src="images/lucas_david_usr.png" />
+					<div class="statusUpdateContent"> 
+						<div> 
+							<span class="statusUpdateAuthor">Lucas David</span>
+							<span class="statusUpdateInformation">is studying for a capstone quiz </span>
+						</div>
+						<span class="statusUpdateLocation">- posted at Robert E. Kennedy Library </span>
+					</div>
+					<img src="images/message.png" class="statusUpdateMessageButton" />
+
+				</li>
+				<li class="statusUpdateItem"> 
+					<img class="statusUpdateUserImg" src="images/deryck_whibley_usr.png" />
+					<div class="statusUpdateContent"> 
+						<div> 
+							<span class="statusUpdateAuthor">Deryck Whibley</span>
+							<span class="statusUpdateInformation">Late night at the studio. </span>
+						</div>
+						<span class="statusUpdateLocation">- posted at Island Records Studio </span>
+					</div>
+					<img src="images/message.png" class="statusUpdateMessageButton" />
+
+				</li>
+			</ul>
+			</div>
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember.min.js"></script>
+  <script src="js/libs/ember-data.js"></script>
+  <script src="js/libs/localstorage_adapter.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

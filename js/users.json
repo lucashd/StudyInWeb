@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "userID": 1,
+      "imageURL": "images/lucas_david_usr.png",
+      "firstName": "Lucas",
+      "lastName": "David"
+    }, {
+      "userID": 2,
+      "imageURL": "images/deryck_whibley_usr.png",
+      "firstName": "Deryck",
+      "lastName": "Whibley"
+    }, {
+      "userID": 3,
+      "imageURL": "images/beach_usr.png",
+      "firstName": "Amy",
+      "lastName": "Kirk"
+    }
+  ]
+}

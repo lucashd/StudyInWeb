@@ -1,0 +1,1045 @@
+@font-face {
+    font-family: LatoLight;
+    src: url('../fonts/lato/Lato-Light.ttf');
+}
+
+@font-face {
+    font-family: LatoThin;
+    src: url('../fonts/lato/Lato-Thin.ttf');
+}
+
+@font-face {
+    font-family: LatoMedium;
+    src: url('../fonts/lato/Lato-Medium.ttf');
+}
+
+header {
+	height: 40px;
+	width: 100%;
+	display:block;
+	background: #3884cf;
+}
+
+.ember-app {
+    height: 100%;
+}
+
+
+/** 
+	Application Template CSS
+**/
+
+
+
+#check-in-image-container {
+	height: 100px;
+	width: 100px;
+	margin: 20px auto;
+	display: block;
+}
+
+#groups-image-container {
+	height: 100px;
+	width: 100px;
+	margin: 20px auto;
+	display: block;
+}
+
+#update-status-groups-button {
+	height: 52px;
+	width: 40px;
+	display: block;
+	float: center;
+	margin: 0 auto;
+	padding: 24px 24px 24px 24px;
+}
+
+#groups-image {
+	height: 37px;
+	width: 48px;
+	display: block;
+	float: center;
+	margin: 0 auto;
+	padding: 24px 24px 24px 24px;
+}
+
+#user ul li {
+	text-decoration: none;
+	color: #696c74;
+	outline: 0;
+	cursor: pointer;
+}
+
+#user ul li:hover {
+	text-decoration: none;
+	color: #5b92fa;
+	outline: 0;
+	cursor: pointer;
+}
+
+#user ul .active {
+	text-decoration: none;
+	color: #5b92fa;
+	font-family: LatoMedium;
+	outline: 0;
+}
+/** 
+	Status Check Ins Page CSS 
+**/
+
+#feed {
+	width: 100%;
+	min-height: 100%;
+	height: auto;
+	background: white;
+	margin: 0 auto;	
+	padding-top: 20px;	
+
+}
+
+#feed ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#no-status-check-ins {
+	font-family: LatoLight;
+	margin: 50px auto;
+	font-size: 20px;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	background: #f9f9f9;
+}
+
+header > img {
+	height: 20px;
+	width: 35px;
+	padding: 8px 10px 10px 10px;
+	float: left;	
+}
+
+#site-logo {
+	display: block;
+	float: center;
+	width: 40px;
+	height: 52px;
+	margin: 20px auto;
+}
+
+#site-title {
+	font-family: LatoLight;
+	font-size: 44px;
+	color: #5b92fa;
+	padding: 40px;
+}
+
+
+#header-title {
+	float:left;
+	display:inline-block;
+	height: 20px;
+	color: white;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: LatoMedium;
+	font-weight: lighter;
+}
+
+#tagline {
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+	font-size: 24px;
+	font-family: LatoLight;
+	font-weight: bold;
+	color: #696c74;
+}
+
+main {
+	height: 100%;
+	margin: 0;
+	text-align: center;
+}
+
+main p {
+	text-align: left;
+	margin: 40px auto;
+	font-size: 17px;
+	font-family: LatoLight;
+	width: 80%;
+	color: #696c74;
+}
+
+#login {
+	margin: 0 auto;
+	width: 260px;
+	height: 39px;
+	border-radius: 3px;
+	border: 1px solid rgba(5, 37, 105, 0.64);
+	background: #2751aa;
+	color: white;
+	font-family: LatoLight;
+}
+
+/** Home CSS **/ 
+
+#feed-toolbar {
+	width: 100%;
+	height: 50px;
+
+}
+
+#update-status-button {
+	width: 40px;
+	height: 23px;
+}
+
+
+#left-content {
+	width: 22%;
+	height: 100%;
+	float: left;
+	margin-right: -1px;
+}
+
+#mid-content {
+	width: 56%;
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto;
+	border-left: 1px solid #f0f0f0;
+	border-right: 1px solid #f0f0f0;
+	background: white;
+	float:left;
+}
+
+#right-content {
+	width: 22%;
+	height: 100%;
+	float: left;
+	margin-left:-1px;
+}
+
+
+
+.statusUpdateItem {
+	text-align: left;
+	padding: 20px 40px 20px 40px;	
+}
+
+.statusUpdateContent {
+	padding-top: 4px;
+	margin-left: 5px;
+	font-family: LatoLight;
+	display: inline-block;
+}
+
+.statusUpdateAuthor {
+	font-family: LatoMedium;
+}
+
+.statusUpdateInformation {
+	padding-left:4px;
+}
+
+.statusUpdateUserImg {
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+
+.statusUpdateMessageButton {
+	display:inline-block;
+	float: right;
+	height: 12px;
+	width: 20px;
+	margin: 10px;
+}
+
+#usr-toolbar {
+	height: 20px;
+	padding: 10px;
+	float: right;
+}
+
+#usr-name {
+	color: white;
+	font-family: LatoLight;
+	margin-right: 40px;
+}
+
+#message-toolbar-icon {
+	width: 20px;
+	margin-right: 10px;
+}
+
+/** GROUPS PAGE CSS **/
+
+#add-new-group-list-item {
+	font-family: LatoLight;
+	font-size: 30px;
+	text-align: center;	
+	color: #696c74;
+	background: white;
+	background-size: 100%;
+	height: 100px;
+	width: 100%;
+	float: left;
+	padding-top: 40px;
+}
+
+#add-new-group-list-item a {
+	text-align: center;
+	width: 100%;
+	color: #696c74;
+	text-decoration: none;
+}
+
+#groups-list { 
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align:left;
+}
+
+.groupItem {
+	text-align: left;
+	padding: 40px 0 20px 0;	
+	border-bottom:	1px solid #f0f0f0;
+	background-size: 100%;
+	height: 100px;
+	width: 100%;
+	float: left;
+}
+
+.groupTitle {
+	font-family: LatoLight;
+	font-size: 30px;
+	text-align: left;	
+	color: #696c74;
+	padding-left: 40px;
+}
+
+.groupStatus {
+	font-family: LatoLight;
+	font-size: 16px;
+	text-align: left;	
+	padding-top: 20px;
+	padding-left: 40px;
+	color: #696c74;
+
+}
+
+.groupItemContent {
+	padding-top: 4px;
+	margin-left: 5px;
+	font-family: LatoLight;
+	display: inline-block;
+}
+
+#groups {
+	width: 75%;
+	height: 100px;
+	margin: 200px auto;
+}
+
+#groups ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+
+.selectedGroup {
+	color: #5b92fa;
+	font-weight: bolder;
+}
+
+
+
+#groups-title {
+	font-family: LatoLight;
+	color: #696c74;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 10px;
+}
+
+/** Group page **/
+
+#group-header {
+	font-family: LatoLight;
+	font-size: 30px;
+	text-align: center;	
+	padding: 40px;
+	color: #696c74;
+	background: url('../images/sigma_nu_title.png');
+	background-size: 100%;
+}
+
+#group-toolbar {
+	height: 20px;
+	padding: 10px 0 10px 0;
+	width: 100%;
+	border-bottom: 1px solid #f0f0f0;
+	background: white;
+}
+
+#group-toolbar ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#group-toolbar ul li {
+	display: inline-block;
+	width: 30%;
+	font-family: LatoLight;
+	color: #696c74;
+}
+
+#user {
+	width: 75%;
+	height: 100px;
+	margin: 140px auto;
+}
+
+#user ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.selectedUserItem {
+	color: #5b92fa;
+	font-weight: bolder;
+}
+
+#user ul li {
+	padding: 5px;
+	font-family: LatoThin;
+	font-size: 14px;	
+}
+
+#user-title {
+	font-family: LatoLight;
+	color: #696c74;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 10px;
+}
+
+#user-title a {
+	text-decoration: none;
+	color: #696c74;
+	outline: 0;
+}
+
+#user-title .active {
+	text-decoration: none;
+	color: #5b92fa;
+	outline: 0;
+	font-family: LatoMedium;
+}
+
+
+#user-title a:hover {
+	text-decoration: none;
+	color: #5b92fa;
+	outline: 0;
+}
+
+#usr-profile-img {
+	width: 80px;
+	height: 80px;
+	margin: 20px;
+}
+
+/** messages **/
+
+#groups ul li {
+	padding: 5px;
+	font-family: LatoThin;
+	font-size: 14px;	
+}
+
+#groups ul li a {
+	text-decoration: none;
+	color: #696c74;
+	outline: 0;
+}
+#groups-title {
+	font-family: LatoLight;
+	color: #696c74;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 10px;
+}
+
+#messages-header {
+	font-family: LatoLight;
+	font-size: 30px;
+	text-align: center;	
+	padding: 40px;
+	color: #696c74;
+	background: white;
+	background-size: 100%;
+	border-bottom: 1px solid #f0f0f0;
+
+}
+
+#messages-toolbar {
+	height: 20px;
+	padding: 10px 0 10px 0;
+	width: 100%;
+	border-bottom: 1px solid #f0f0f0;
+	background: white;
+}
+
+#messages-toolbar ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#messages-toolbar ul li {
+	display: inline-block;
+	width: 48%;
+	font-family: LatoLight;
+	color: #696c74;
+
+}
+
+.selected {
+	color: #5b92fa;
+	font-weight: bolder;
+}
+
+#messages-list { 
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.messageItem {
+	text-align: left;
+	padding: 40px;	
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.messageContent {
+	padding-top: 4px;
+	margin-left: 5px;
+	font-family: LatoLight;
+	display: inline-block;
+}
+
+.messageAuthor {
+	font-family: LatoMedium;
+}
+
+.messageInformation {
+	display: block;
+	padding-top: 10px;
+}
+
+.messageUserImg {
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+
+/** profile **/
+
+#profile-header {
+	font-family: LatoLight;
+	font-size: 30px;
+	text-align: center;	
+	padding: 20px 20px 0px 20px;
+	color: #696c74;
+	background: white;
+	background-size: 100%;
+}
+
+#profile-title {
+	text-align: center;
+	margin: 20px auto 0 auto;
+}
+
+#profile-user-image {
+	width: 100px;
+	height: 100px;
+	margin: 0 auto 0 auto;
+}
+
+#totals {
+	margin: 40px;
+}
+#day-streak-image {
+	width: 90px;
+	height: 90px;
+	margin: 5px 40px;
+}
+
+#total-checkins-image {
+	width: 90px;
+	height: 90px;
+	margin: 5px 40px;
+}
+
+#total-hours-image {
+	width: 90px;
+	height: 90px;
+	margin: 5px 40px;
+}
+
+#profile-toolbar {
+	height: 20px;
+	padding: 10px 0 10px 0;
+	width: 100%;
+	border-bottom: 1px solid #f0f0f0;
+	background: white;
+}
+
+#profile-toolbar ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#profile-toolbar ul li {
+	display: inline-block;
+	width: 48%;
+	font-family: LatoLight;
+	color: #696c74;
+
+}
+
+.selected {
+	color: #5b92fa;
+	font-weight: bolder;
+}
+
+#profile-list { 
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.profileItem {
+	text-align: left;
+	padding: 40px;	
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.profileContent {
+	padding-top: 4px;
+	margin-left: 5px;
+	font-family: LatoLight;
+	display: inline-block;
+}
+
+.profileAuthor {
+	font-family: LatoMedium;
+}
+
+.profileInformation {
+	display: block;
+	padding-top: 10px;
+}
+
+#selected-user-title {
+	font-family: LatoLight;
+	color: #5b92fa;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 10px;
+}
+
+.chart {
+	width: 60%;
+	padding-bottom: 40px;
+}
+
+#hours-header {
+	font-family: LatoLight;
+	font-size: 16px;
+	text-align: center;	
+	color: #696c74;
+	background: white;
+	background-size: 100%;
+	margin-top: 40px;
+
+}
+
+#profile-list {
+	list-style-type: none;
+	padding: 0 100px 0 100px;
+}
+
+
+#update-status-btn {
+	display: block;
+	float: center;
+	margin: 200px auto 0 auto;
+	width: 40px;
+	height: 23px;
+}
+
+/** status pop up **/
+
+#status-feed-toolbar {
+	width: 100%;
+}
+
+#status-popup {
+	border-bottom: 1px solid #f0f0f0;
+	margin: 10px 0;
+	width: 100%;
+	height: 320px;
+}
+
+#status-info-textarea {
+	width: 80%;
+	margin: 40px;
+	height: 20px;
+	border: 0;
+	border-bottom: 1px solid #f0f0f0;
+	resize: none;
+	font-family: LatoLight;
+}
+
+#status-class-textarea {
+	width: 40%;
+	height: 20px;
+	border: 0;
+	padding: 0;
+	border-bottom: 1px solid #f0f0f0;
+	resize: none;
+	font-family: LatoLight;
+}
+
+#status-professor-textarea {
+	width: 40%;
+	height: 20px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #f0f0f0;
+	resize: none;
+	font-family: LatoLight;
+}
+
+#status-location-textarea {
+	width: 80%;
+	margin: 40px;
+	height: 20px;
+	border: 0;
+	border-bottom: 1px solid #f0f0f0;
+	resize: none;
+	font-family: LatoLight;
+}
+
+#status-toolbar {
+	width: 100%;
+}
+
+#status-post-btn {
+	font-family: LatoLight;
+	color: #696c74;
+	width: 40%;
+	margin: 20px;
+	display: inline-block;
+}
+
+#status-silent {
+	display: block;
+	margin: 0 auto;
+	font-family: LatoLight;
+	color: #696c74;
+	font-size: 14px;
+	height: 30px;
+}
+
+#status-silent {
+
+}
+
+#status-silent label {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+
+#status-silent input {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0 10px 0 0 ;
+
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+
+
+#user-image {
+	height: 100px;
+	width: 100px;
+	margin: 20px auto;
+	display: block;
+}
+
+
+
+#check-in {
+	width: 75%;
+	height: 100px;
+	margin: 140px auto;
+
+}
+
+#check-in-title {
+	font-family: LatoLight;
+	color: #696c74;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 10px;
+}
+
+#check-in-title-selected {
+	font-family: LatoLight;
+	color: #5b92fa;
+	border-bottom: 1px solid #f0f0f0;
+	padding: 10px;
+}
+
+#check-in-text {
+	padding: 5px;
+	font-family: LatoThin;
+	font-size: 14px;	
+	margin: 20px;
+}
+
+
+#home-button {
+	height: 42px;
+	width: 40px;
+	display: block;
+	float: center;
+	margin: 0 auto;
+	padding: 24px 24px 24px 24px;
+}
+
+.selected {
+	color: #5b92fa !important;
+}
+
+/** add group popup **/
+
+
+#add-a-group-header {
+	font-family: LatoLight;
+	font-size: 30px;
+	text-align: center;	
+	padding: 40px;
+	color: #696c74;
+	background: white;
+	background-size: 100%;
+}
+
+#search-groups {
+	width: 100%;
+	color: #696c74;
+}
+
+#search-title {
+	font-family: LatoLight;
+	font-size: 20px;
+	color: #696c74;
+	text-align: left;
+	margin: 40px auto 20px auto;
+	width: 80%;
+}
+
+#search-textarea {
+	width: 80%;
+	height: 20px;
+	font-size: 15px;
+	outline: none;
+	padding: 10px;
+	border: 0;
+	border: 1px solid #f0f0f0;
+	margin: 40px auto;
+	border-radius: 20px;
+	font-family: LatoLight;
+	text-align: center;
+}
+
+#search-button {
+	font-family: LatoLight;
+	color: #696c74;
+	width: 80%;
+	margin: 20px;
+	display: inline-block;
+	text-align: center;
+}
+
+/** add group create **/
+
+#group-create {
+	margin: 10px 0;
+	width: 100%;
+	height: 320px;
+}
+
+#group-name-textarea {
+	width: 80%;
+	margin: 40px;
+	height: 20px;
+	border: 0;
+	border-bottom: 1px solid #f0f0f0;
+	resize: none;
+	font-family: LatoLight;
+}
+
+#group-info-title {
+	width: 80%;
+	margin: 40px auto 0 auto;
+	font-family: LatoLight;
+	text-align: left;
+}
+
+#study-spots-title {
+	width: 80%;
+	margin: 0 auto;
+	font-family: LatoLight;
+	text-align: left;
+}
+
+#study-spots-information {
+	width: 80%;
+	font-family: LatoLight;
+	font-size: 12px;
+	text-align: left;
+	margin: 10px auto 40px auto;
+}
+
+#study-spots-list { 
+	width: 80%;
+	margin: 0 auto 40px auto;
+	padding: 0;
+	list-style-type: none;
+}
+
+.studySpotItem {
+	margin: 0 auto;
+	text-align: left;
+	font-family: LatoLight;
+	font-size: 14px;
+	border-bottom: 1px solid #f0f0f0;
+	width: 70%;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+
+.addStudySpotItem {
+	margin: 0 auto;
+	text-align: center;
+	font-family: LatoLight;
+	font-size: 14px;
+	width: 70%;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#allow-any-study-spot {
+	display: block;
+	font-family: LatoLight;
+	color: #696c74;
+	font-size: 14px;
+	height: 30px;
+	margin: 20px;
+}
+
+#allow-any-study-spot label {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+
+#allow-any-study-spot input {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0 10px 0 0 ;
+
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+
+
+
+#status-class-textarea {
+	width: 40%;
+	height: 20px;
+	border: 0;
+	padding: 0;
+	border-bottom: 1px solid #f0f0f0;
+	resize: none;
+	font-family: LatoLight;
+}
+
+#status-professor-textarea {
+	width: 40%;
+	height: 20px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #f0f0f0;
+	resize: none;
+	font-family: LatoLight;
+}
+
+#status-location-textarea {
+	width: 80%;
+	margin: 40px;
+	height: 20px;
+	border: 0;
+	border-bottom: 1px solid #f0f0f0;
+	resize: none;
+	font-family: LatoLight;
+}
+
+#status-toolbar {
+	width: 100%;
+}
+
+#group-create-btn {
+	font-family: LatoLight;
+	color: #696c74;
+	width: 40%;
+	margin: 20px;
+	display: inline-block;
+}
+
+#map-image {
+	width: 80%;
+}
+
+#map-image-container {
+	height: 100%;
+	background: black;
+}
+
+#study-spot-create {
+	margin: 10px 0;
+	width: 100%;
+}
